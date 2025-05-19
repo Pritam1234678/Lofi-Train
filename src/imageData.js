@@ -26,7 +26,7 @@ const lofiImages = [{
     {
         "id": 6,
         "image": require("./assets/images/lofi-settings8.gif"),
-        "textColor": "#D7E2FF"
+        "textColor": "#FFFFFF"
     }
 ]
 
