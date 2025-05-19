@@ -1,0 +1,119 @@
+.animated-container {
+    position: absolute;
+    top: 10vh;
+    right: 5%;
+    width: 25%;
+    background-color: rgba(255, 255, 255, .05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 15px 30px;
+    border-radius: 40px;
+    transform: translateX(100%);
+    // visibility: hidden;
+
+    &.closed {
+        animation: slide-over 1s ease-in-out forwards;
+    }
+
+    @keyframes slide-over {
+        0% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+    }
+
+    &.open {
+        animation: slide-in 1s ease-in-out forwards;
+    }
+
+    @keyframes slide-in {
+        0% {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .animated-content {
+        
+        .close-btn {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        } 
+    }
+    
+}
+
+
+$xs: 0;
+$sm: 480px;
+$md: 767px;
+$lg: 991px;
+$xl-small: 1200px;
+$xl-large: 1320px;
+$giant: 1920px;
+
+@media screen and (min-width: $xs) and (max-width: $sm) {
+    .animated-container {
+        top: 16%;
+        right: 5%;
+        width: 89%;
+        padding: 15px 18px;
+    }
+  
+}
+@media screen and (min-width: $sm) and (max-width: $md) {
+    .animated-container {
+        top: 16%;
+        right: 15%;
+        width: 68%;
+        padding: 15px 20px;
+    }
+}
+@media screen and (min-width: $md) and (max-width: $lg) {
+    .animated-container {
+        top: 12%;
+        right: 5%;
+        width: 41%;
+        padding: 18px 20px;
+    }
+
+}
+@media screen and (min-width: $lg) and (max-width: $xl-small) {
+    .animated-container {
+        top: 11%;
+        right: 5%;
+        width: 33.5%;
+        padding: 20px 20px;
+    }
+}
+
+@media screen and (min-width: $xl-small) and (max-width: $xl-large) {
+    .animated-container {
+        top: 11%;
+        right: 5%;
+        width: 28.5%;
+        padding: 22px 23px;
+    }
+}
+
+@media screen and (min-width: $xl-large) and (max-width: $giant) {
+}
+@media screen and (min-width: $giant) {
+    .animated-container {
+        top: 10%;
+        right: 5%;
+        width: 26%;
+        padding: 25px 32px;
+    }
+  
+}
+

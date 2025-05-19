@@ -1,0 +1,1147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Kite One", sans-serif; 
+}
+
+p {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 6.5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 100;
+    letter-spacing: -2px;
+}
+
+i {
+    cursor: pointer;
+    transition: all .4s ease;
+
+    &:hover {
+        opacity: .5;
+    }
+}
+
+input {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, .5);
+    color: rgba(0, 0, 0, .6);
+    font-family: 'Kite One';
+
+    &::placeholder {
+        color: rgba(0, 0, 0, .5);
+    }
+    &::-moz-placeholder {
+        color: rgba(0, 0, 0, .5);
+    }
+    &::-webkit-placeholder {
+        color: rgba(0, 0, 0, .5);
+    }
+}
+
+button {
+    padding: 3px 15px;
+    font-family: 'Kite One', serif;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, .8);
+    cursor: pointer;
+}
+
+.container {
+    padding: 20px 80px;
+    width: 100vw;
+    height: 100svh;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-size: cover;
+    position: relative;
+    color: #FFD7D7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    transition: all .5s ease;
+    overflow: hidden;
+    animation: expose .5s ease forwards;
+    
+    @keyframes expose {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .cover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .4);
+        z-index: 2;
+    }
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 5;
+}
+
+.animated-section {
+    z-index: 10;
+}
+
+.middle-section {
+    margin-top: auto;
+}
+
+.bottom-section {
+    width: 100%;
+    margin-top: auto;
+
+}
+
+// TODAY'S DATE WITH MUSIC PLAYER
+.date-music-play {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .full-date {
+        width: fit-content;
+        text-align: center;
+    }
+
+    .music-player {
+        display: flex;
+        align-items: center;
+        gap: 1.5em;
+        margin-top: 3em;
+        text-align: left;
+
+        .current-play-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            transform: rotate(0); 
+            animation: spin 10s linear infinite;
+            animation-play-state: paused;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                border: 1.5px solid white;
+            }
+
+            &.spin {
+                animation-play-state: running;
+            }
+
+
+        }
+
+        .current-play-title-buttons-radio {
+            .current-play-title-buttons {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1.5em;
+
+                .current-play-title {
+
+                    p:first-child {
+                        margin-bottom: 0px;
+                        font-size: 16.5px;
+                    }
+                    p:last-child {
+                        font-size: 12.5px;
+                    }
+                }
+
+                .current-play-buttons {
+                    display: flex;
+                    gap: 5px;
+                }
+            }
+
+            .current-play-range {
+                margin-top: 10px;
+                height: 3.5px;
+                width: 100%;
+                border-radius: 10px;
+                cursor: pointer;
+
+                .seek-bar {
+                    height: 100%;
+                    width: 0%;
+                    background-color: black;
+                    border-radius: 10px;
+                }
+            }
+
+        }
+
+
+    }
+}
+
+// WEATHER FORECAST WITH TIME AND WELCOME SIGN
+.weather-time-welcome {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .weather-time {
+        .weather-forecast {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .weather-location-desc {
+            p:last-child {
+                font-size: 14px;
+                margin-top: -3px;
+            }
+        }
+
+        .weather-degrees {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            
+            h4 {
+                font-size: 2.4rem;
+                margin-right: 5px;
+            }
+        }
+        
+        i {
+            &:hover {
+                opacity: 1;
+                cursor: default;
+            }
+        }
+
+        #animated-colon {
+            animation: flash .9s linear infinite alternate;
+            margin: 0 15px;
+        }
+
+        @keyframes flash {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    }
+
+    .welcome {
+        h3 {
+            margin-top: -5px;
+            font-size: 2.2rem;
+        }
+    }
+}
+
+
+$xs: 0;
+$sm: 480px;
+$md: 767px;
+$lg: 991px;
+$xl-small: 1200px;
+$xl-large: 1320px;
+$giant: 1920px;
+
+@media screen and (min-width: $xs) and (max-width: $sm) {
+    p {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 4rem;
+    }
+    
+    h2 {
+        font-size: 2.8rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+
+    }
+    
+    h4 {
+        font-size: 1.2rem;
+    }
+    
+    h5 {
+        font-size: .8rem;
+    }
+    
+    h6 {
+        font-size: 13px;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 100;
+        letter-spacing: -2px;
+    }
+    
+    input {
+        padding: 5px 10px;    
+    }
+    
+    button {
+        padding: 3px 15px;
+        font-size: 12x;
+    }
+    
+    .container {
+        padding: 30px 5px;
+        color: #FFD7D7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 5;
+    }
+    
+    // TODAY'S DATE WITH MUSIC PLAYER
+    .date-music-play {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .full-date {
+            width: fit-content;
+            text-align: center;
+        }
+    
+        .music-player {
+            
+            gap: .9em;
+            margin-top: 3em;
+    
+            .current-play-image {
+                width: 55px;
+                height: 55px;
+    
+                img {
+                    border: 1.5px solid white;
+                }
+            }
+    
+            .current-play-title-buttons-radio {
+                .current-play-title-buttons {
+                    gap: .5em;
+    
+                    .current-play-title {
+    
+                        p:first-child {
+                            margin-bottom: 0px;
+                            font-size: 12.5px;
+                            width: 80%;
+                        }
+                        p:last-child {
+                            font-size: 10px;
+                        }
+                    }
+    
+                    .current-play-buttons {
+                        display: flex;
+                        gap: 2px;
+                    }
+                }
+    
+                .current-play-range {
+                    margin-top: 10px;
+                    height: 3.5px;
+                }
+    
+            }
+        }
+    }
+    
+    // WEATHER FORECAST WITH TIME AND WELCOME SIGN
+    .weather-time-welcome {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .weather-time {
+            .weather-forecast {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #animated-colon {
+                margin: 0 13px;
+            }
+        }
+    
+        .welcome {
+            text-align: center;
+            h3 {
+                margin-top: -5px;
+                font-size: 1.8rem;
+            }
+        }
+    }
+  
+}
+@media screen and (min-width: $sm) and (max-width: $md) {
+    p {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 4.6rem;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+
+    }
+    
+    h4 {
+        font-size: 1.4rem;
+    }
+    
+    h5 {
+        font-size: 1rem;
+    }
+    
+    h6 {
+        font-size: 15px;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 100;
+        letter-spacing: -2px;
+    }
+    
+    input {
+        padding: 5px 10px;    
+    }
+    
+    button {
+        padding: 3px 15px;
+        font-size: 12x;
+    }
+    
+    .container {
+        padding: 30px 80px;
+        color: #FFD7D7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 5;
+    }
+    
+    // TODAY'S DATE WITH MUSIC PLAYER
+    .date-music-play {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .full-date {
+            width: fit-content;
+            text-align: center;
+        }
+    
+        .music-player {
+            gap: 1.5em;
+            margin-top: 3em;
+    
+            .current-play-image {
+                width: 65px;
+                height: 65px;
+    
+                img {
+                    border: 1.5px solid white;
+                }
+            }
+    
+            .current-play-title-buttons-radio {
+                .current-play-title-buttons {
+                    gap: 1.5em;
+    
+                    .current-play-title {
+    
+                        p:first-child {
+                            margin-bottom: 0px;
+                            font-size: 14px;
+                        }
+                        p:last-child {
+                            font-size: 11px;
+                        }
+                    }
+    
+                    .current-play-buttons {
+                        display: flex;
+                        gap: 5px;
+                    }
+                }
+    
+                .current-play-range {
+                    margin-top: 10px;
+                    height: 3.5px;
+                }
+    
+            }
+        }
+    }
+    
+    // WEATHER FORECAST WITH TIME AND WELCOME SIGN
+    .weather-time-welcome {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .weather-time {
+            .weather-forecast {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #animated-colon {
+                margin: 0 13px;
+            }
+        }
+    
+        .welcome {
+            text-align: center;
+            h3 {
+                margin-top: -5px;
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+@media screen and (min-width: $md) and (max-width: $lg) {
+    p {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 5rem;
+    }
+    
+    h2 {
+        font-size: 2.3rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    h4 {
+        font-size: 1.2rem;
+    }
+    
+    h5 {
+        font-size: 1rem;
+    }
+    
+    h6 {
+        font-size: 15px;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 100;
+        letter-spacing: -2px;
+    }
+    
+    input {
+        padding: 5px 10px;    
+    }
+    
+    button {
+        padding: 3px 15px;
+        font-size: 12x;
+    }
+    
+    .container {
+        padding: 30px 80px;
+        color: #FFD7D7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 5;
+    }
+    
+    // TODAY'S DATE WITH MUSIC PLAYER
+    .date-music-play {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .full-date {
+            width: fit-content;
+            text-align: center;
+        }
+    
+        .music-player {
+            gap: 1.5em;
+            margin-top: 3em;
+    
+            .current-play-image {
+                width: 60px;
+                height: 60px;
+    
+                img {
+                    border: 1.5px solid white;
+                }
+            }
+    
+            .current-play-title-buttons-radio {
+                .current-play-title-buttons {
+                    gap: 1.5em;
+    
+                    .current-play-title {
+    
+                        p:first-child {
+                            margin-bottom: 0px;
+                            font-size: 15px;
+                        }
+                        p:last-child {
+                            font-size: 10.5px;
+                        }
+                    }
+    
+                    .current-play-buttons {
+                        display: flex;
+                        gap: 5px;
+                    }
+                }
+    
+                .current-play-range {
+                    margin-top: 10px;
+                    height: 3.5px;
+                }
+    
+            }
+        }
+    }
+    
+    // WEATHER FORECAST WITH TIME AND WELCOME SIGN
+    .weather-time-welcome {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    
+        .weather-time {
+    
+            #animated-colon {
+                margin: 0 15px;
+            }
+        }
+    
+        .welcome {
+            h3 {
+                margin-top: -5px;
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+}
+@media screen and (min-width: $lg) and (max-width: $xl-small) {
+    p {
+        font-size: 17px;
+    }
+    
+    h1 {
+        font-size: 5.6rem;
+    }
+    
+    h2 {
+        font-size: 2.7rem;
+    }
+    
+    h3 {
+        font-size: 1.8rem;
+    }
+    
+    h4 {
+        font-size: 1.2rem;
+    }
+    
+    h5 {
+        font-size: 1rem;
+    }
+    
+    h6 {
+        font-size: 15px;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 100;
+        letter-spacing: -2px;
+    }
+    
+    input {
+        padding: 5px 10px;    
+    }
+    
+    button {
+        padding: 3px 15px;
+        font-size: 12x;
+    }
+    
+    .container {
+        padding: 30px 80px;
+        color: #FFD7D7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 5;
+    }
+    
+    // TODAY'S DATE WITH MUSIC PLAYER
+    .date-music-play {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .full-date {
+            width: fit-content;
+            text-align: center;
+        }
+    
+        .music-player {
+            gap: 1.5em;
+            margin-top: 3em;
+    
+            .current-play-image {
+                width: 70px;
+                height: 70px;
+    
+                img {
+                    border: 1.5px solid white;
+                }
+            }
+    
+            .current-play-title-buttons-radio {
+                .current-play-title-buttons {
+                    gap: 1.5em;
+    
+                    .current-play-title {
+    
+                        p:first-child {
+                            margin-bottom: 0px;
+                            font-size: 16px;
+                        }
+                        p:last-child {
+                            font-size: 11.5px;
+                        }
+                    }
+    
+                    .current-play-buttons {
+                        display: flex;
+                        gap: 5px;
+                    }
+                }
+    
+                .current-play-range {
+                    margin-top: 10px;
+                    height: 3.5px;
+                }
+    
+            }
+        }
+    }
+    
+    // WEATHER FORECAST WITH TIME AND WELCOME SIGN
+    .weather-time-welcome {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    
+        .weather-time {
+    
+            #animated-colon {
+                margin: 0 15px;
+            }
+        }
+    
+        .welcome {
+            h3 {
+                margin-top: -5px;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $xl-small) and (max-width: $xl-large) {
+    p {
+        font-size: 18px;
+    }
+    
+    h1 {
+        font-size: 6rem;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+    
+    h3 {
+        font-size: 2rem;
+    }
+    
+    h4 {
+        font-size: 1.3rem;
+    }
+    
+    h5 {
+        font-size: 1rem;
+    }
+    
+    h6 {
+        font-size: 15px;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 100;
+        letter-spacing: -2px;
+    }
+    
+    input {
+        padding: 5px 10px;    
+    }
+    
+    button {
+        padding: 3px 15px;
+        font-size: 12x;
+    }
+    
+    .container {
+        padding: 30px 80px;
+        color: #FFD7D7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 5;
+    }
+    
+    // TODAY'S DATE WITH MUSIC PLAYER
+    .date-music-play {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .full-date {
+            width: fit-content;
+            text-align: center;
+        }
+    
+        .music-player {
+            gap: 1.5em;
+            margin-top: 3em;
+    
+            .current-play-image {
+                width: 70px;
+                height: 70px;
+    
+                img {
+                    border: 1.5px solid white;
+                }
+            }
+    
+            .current-play-title-buttons-radio {
+                .current-play-title-buttons {
+                    gap: 1.5em;
+    
+                    .current-play-title {
+    
+                        p:first-child {
+                            margin-bottom: 2px;
+                            font-size: 17.5px;
+                        }
+                        p:last-child {
+                            font-size: 12.5px;
+                        }
+                    }
+    
+                    .current-play-buttons {
+                        display: flex;
+                        gap: 5px;
+                    }
+                }
+    
+                .current-play-range {
+                    margin-top: 10px;
+                    height: 3.5px;
+                }
+    
+            }
+        }
+    }
+    
+    // WEATHER FORECAST WITH TIME AND WELCOME SIGN
+    .weather-time-welcome {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    
+        .weather-time {
+    
+            #animated-colon {
+                margin: 0 15px;
+            }
+        }
+    
+        .welcome {
+            h3 {
+                margin-top: -5px;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $xl-large) and (max-width: $giant) {
+}
+@media screen and (min-width: $giant) {
+    p {
+        font-size: 24px;
+    }
+    
+    h1 {
+        font-size: 8rem;
+    }
+    
+    h2 {
+        font-size: 5.5rem;
+    }
+    
+    h3 {
+        font-size: 3.5rem;
+    }
+    
+    h4 {
+        font-size: 2rem;
+    }
+    
+    h5 {
+        font-size: 1.5rem;
+    }
+    
+    h6 {
+        font-size: 20px;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 100;
+        letter-spacing: -2px;
+    }
+    
+    input {
+        padding: 5px 10px;    
+    }
+    
+    button {
+        padding: 3px 15px;
+        font-size: 16px;
+    }
+    
+    .container {
+        padding: 30px 80px;
+        color: #FFD7D7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 5;
+    }
+    
+    // TODAY'S DATE WITH MUSIC PLAYER
+    .date-music-play {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .full-date {
+            width: fit-content;
+            text-align: center;
+        }
+    
+        .music-player {
+            gap: 1.5em;
+            margin-top: 3em;
+    
+            .current-play-image {
+                width: 100px;
+                height: 100px;
+    
+                img {
+                    border: 2.5px solid white;
+                }
+            }
+    
+            .current-play-title-buttons-radio {
+                .current-play-title-buttons {
+                    gap: 1.5em;
+    
+                    .current-play-title {
+    
+                        p:first-child {
+                            margin-bottom: 2px;
+                            font-size: 22.5px;
+                        }
+                        p:last-child {
+                            font-size: 16.5px;
+                        }
+                    }
+    
+                    .current-play-buttons {
+                        display: flex;
+                        gap: 5px;
+                    }
+                }
+    
+                .current-play-range {
+                    margin-top: 10px;
+                    height: 4.5px;
+                }
+    
+            }
+        }
+    }
+    
+    // WEATHER FORECAST WITH TIME AND WELCOME SIGN
+    .weather-time-welcome {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    
+        .weather-time {
+    
+            #animated-colon {
+                margin: 0 25px;
+            }
+        }
+    
+        .welcome {
+            h3 {
+                margin-top: -5px;
+                font-size: 3.2rem;
+            }
+        }
+    }
+  
+}
+

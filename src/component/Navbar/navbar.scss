@@ -1,0 +1,224 @@
+header {
+    position: fixed;
+    top: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    z-index: 10;
+    // visibility: hidden;   
+
+    nav {
+        background-color: rgba(255, 255, 255, .05);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        width: fit-content;
+        padding: 15px 30px;
+        border-radius: 40px;
+
+        .navbar {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            
+            .separate {
+                width: .6px;
+                height: 20px;
+                background-color: #FFFFFF;
+                opacity: .2;
+            }
+    
+            
+            .main-menu, .social-links {
+                display: flex;
+                gap: 20px;
+
+                i {
+                    font-size: 26px;
+                    opacity: .8;
+
+                    &:hover {
+                        opacity: .5;
+                    }
+                }
+            }
+
+        }
+    }  
+}
+
+$xs: 0;
+$sm: 480px;
+$md: 767px;
+$lg: 991px;
+$xl-small: 1200px;
+$xl-large: 1320px;
+$giant: 1920px;
+
+@media screen and (min-width: $xs) and (max-width: $sm) {
+    header {
+        width: 90%;
+        justify-content: center;
+        top: 40px;
+    
+        nav {
+            padding: 10px 15px;
+    
+            .navbar {
+                gap: 25px;
+            
+                .separate {
+                    height: 20px;
+                }
+        
+                .main-menu, .social-links {
+                    gap: 18px;
+    
+                    i {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }  
+    }
+  
+}
+@media screen and (min-width: $sm) and (max-width: $md) {
+    header {
+        width: 90%;
+        justify-content: center;
+        top: 40px;
+    
+        nav {
+            padding: 15px 30px;
+    
+            .navbar {
+                gap: 25px;
+            
+                .separate {
+                    height: 20px;
+                }
+        
+                .main-menu, .social-links {
+                    gap: 20px;
+    
+                    i {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }  
+    }
+}
+@media screen and (min-width: $md) and (max-width: $lg) {
+    header {
+        width: 90%;
+        justify-content: flex-end;
+    
+        nav {
+            padding: 15px 30px;
+    
+            .navbar {
+                gap: 25px;
+            
+                .separate {
+                    height: 20px;
+                }
+        
+                .main-menu, .social-links {
+                    gap: 20px;
+    
+                    i {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }  
+    }
+
+}
+@media screen and (min-width: $lg) and (max-width: $xl-small) {
+    header {
+        width: 90%;
+        justify-content: flex-end;
+    
+        nav {
+            padding: 15px 30px;
+    
+            .navbar {
+                gap: 25px;
+            
+                .separate {
+                    height: 20px;
+                }
+        
+                .main-menu, .social-links {
+                    gap: 20px;
+    
+                    i {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }  
+    }
+}
+
+@media screen and (min-width: $xl-small) and (max-width: $xl-large) {
+    header {
+        width: 90%;
+        justify-content: flex-end;
+    
+        nav {
+            padding: 15px 30px;
+    
+            .navbar {
+                gap: 30px;
+            
+                .separate {
+                    height: 20px;
+                }
+        
+                .main-menu, .social-links {
+                    gap: 20px;
+    
+                    i {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }  
+    }
+}
+
+@media screen and (min-width: $xl-large) and (max-width: $giant) {
+}
+@media screen and (min-width: $giant) {
+    header {
+        width: 90%;
+        justify-content: flex-end;
+    
+        nav {
+            padding: 20px 35px;
+    
+            .navbar {
+                gap: 40px;
+            
+                .separate {
+                    height: 20px;
+                }
+        
+                .main-menu, .social-links {
+                    display: flex;
+                    gap: 30px;
+    
+                    i {
+                        font-size: 40px;
+                    }
+                }
+            }
+        }  
+    }
+  
+}
+

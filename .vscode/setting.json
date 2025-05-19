@@ -1,0 +1,15 @@
+{
+    "editor.formatOnSave": true,
+    "prettier.disableLanguages": ["javascript", "javascriptreact"],
+    "[javascript]": {
+        "editor.defaultFormatter": null,
+        "editor.formatOnSave": false
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": null,
+        "editor.formatOnSave": false
+    },
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "files.eol": "\n"
+}
